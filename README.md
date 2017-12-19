@@ -18,19 +18,17 @@ Make sure you have [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/)
 	```
 	$ npm install
 	```
-	```
 3. Start the application
 
 	```
 	$ node app.js
 	```
-	```
-
 Your app should now be running on [localhost:8080](http://localhost:8080/).
+
 
 ## Deficiencies 
 This Application without User Authentication and Session.
 
 ## Recommend
-You can fix deficiencies at [Passport](https://github.com/jaredhanson/passport), [express-session](https://github.com/expressjs/session)
+You can fix deficiencies at [User Authentication](https://github.com/jaredhanson/passport), [Session](https://github.com/expressjs/session)
 
