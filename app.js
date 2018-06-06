@@ -34,8 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', login);
-app.use('/registry', registry);
-app.use('/messages', message);
+app.use('api/registries', registry);
+app.use('api/messages', message);
 
 
 io.on('connection', function(socket) { 

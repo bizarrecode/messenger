@@ -21,10 +21,10 @@
             data.username = username;
                 
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             data: JSON.stringify(data),
             contentType: 'application/json',
-            url: '/messages/contact',                      
+            url: 'api/messages/contacts',                      
             success: function(data) {
                 var contact = "";
                 $.each(data, function(i, item) {
@@ -64,10 +64,10 @@
             data.replies_id = replies_id;
                 
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             data: JSON.stringify(data),
             contentType: 'application/json',
-            url: '/messages/history',                      
+            url: 'api/messages/histories',                      
             success: function(data) {
                 room_name = data.room_name;
                 $("#replies-name").html(data.replies_name);
@@ -102,7 +102,7 @@
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json',
-            url: '/messages/save',                      
+            url: 'api/messages/save',                      
             success: function(data) {
 
                 socket.emit('chat', {

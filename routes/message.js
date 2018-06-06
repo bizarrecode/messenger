@@ -6,11 +6,11 @@ router.get('/:id', function(req, res) {
 	message.show(req, res);
 });
 
-router.post('/contact', function(req, res) {
+router.post('/contacts', function(req, res) {
 	message.contact(req, res);
 });
 
-router.post('/history', function(req, res) {
+router.post('/histories', function(req, res) {
 	message.history(req, res);
 });
 
