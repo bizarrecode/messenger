@@ -10,7 +10,7 @@ Make sure you have [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/)
 1. Clone or Download the repository
 
 	```
-	$ git clone https://github.com/jojobizarre/messenger.git
+	$ git clone https://github.com/bizarrecode/messenger.git
 	$ cd messenger
 	```
 2. Install Dependencies
