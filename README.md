@@ -1,7 +1,7 @@
 ![Screenshot](https://raw.githubusercontent.com/bizarrecode/messenger/master/public/images/chat.png)
 
 # messenger
-A Real Time Chat Application built using Node.js, Express, MongoDB, Socket.io
+A Real Time Chat Application built using Node.js, Express, MongoDB, Socket.io, Boostrap, jQuery
 
 ## Installation<a name="installation"></a>
 ### Running Locally
