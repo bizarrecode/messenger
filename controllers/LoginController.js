@@ -12,7 +12,7 @@ loginController.login = function(req, res) {
             console.log("No user found.");
             res.redirect("/login");
         }else if(user.validPassword(userP.password)){
-            res.redirect("/messages/"+user._id);
+            res.redirect("/messages/show/"+user._id);
         }else{
             console.log("Wrong password.");
             res.redirect("/login");

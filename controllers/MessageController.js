@@ -16,7 +16,7 @@ messageController.show = function(req, res) {
 };
 
 messageController.contact = function(req, res) {
-    User.find({ username: { $ne: req.body.username } }).exec(function (err, users) {
+    User.find({ username: { $ne: req.params.username } }).exec(function (err, users) {
         if (err) {
             console.log("Error:", err);
         }else {
@@ -29,14 +29,14 @@ messageController.contact = function(req, res) {
 };
 
 messageController.history = function(req, res) {
-    Room.findOne({ $or: [ { room_name: (req.body.sent_id + req.body.replies_id) }, { room_name: (req.body.replies_id + req.body.sent_id) } ] }).exec(function (err, room) {
+    Room.findOne({ $or: [ { room_name: (req.params.sent_id + req.params.replies_id) }, { room_name: (req.params.replies_id + req.params.sent_id) } ] }).exec(function (err, room) {
         if (err) {
             console.log("Error:", err);
         }else {
             var data = {};  
             if(!room){
                 var roomP = new Room();
-                roomP.room_name = req.body.sent_id + req.body.replies_id;
+                roomP.room_name = req.params.sent_id + req.params.replies_id;
                 roomP.save(function(err) {
                     if(err) {
                         console.log(err);
@@ -48,7 +48,7 @@ messageController.history = function(req, res) {
             }else{
                 data.room_name = room.room_name;
             }
-            User.findOne({_id: req.body.replies_id}).exec(function (err, user) {
+            User.findOne({_id: req.params.replies_id}).exec(function (err, user) {
                 if (err) {
                     console.log("Error:", err);
                 }else {

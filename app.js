@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost:27017/messenger')
-	.then(() =>  console.log('connection succesful'))
+	.then(() =>  console.log('connection mongodb succesful'))
 	.catch((err) => console.error(err));
 
 var app = express();
@@ -34,8 +34,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', login);
-app.use('api/registries', registry);
-app.use('api/messages', message);
+app.use('/registry', registry);
+app.use('/messages', message);
 
 
 io.on('connection', function(socket) { 

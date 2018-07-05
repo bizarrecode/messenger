@@ -22,9 +22,10 @@
                 
         $.ajax({
             type: 'GET',
-            data: JSON.stringify(data),
+            //data: JSON.stringify(data),
             contentType: 'application/json',
-            url: 'api/messages/contacts',                      
+            url: '/messages/contacts/'+username,  
+            //url: '/messages/contacts',                    
             success: function(data) {
                 var contact = "";
                 $.each(data, function(i, item) {
@@ -65,9 +66,9 @@
                 
         $.ajax({
             type: 'GET',
-            data: JSON.stringify(data),
+            //data: JSON.stringify(data),
             contentType: 'application/json',
-            url: 'api/messages/histories',                      
+            url: '/messages/histories/'+sent_id+'/'+replies_id,                      
             success: function(data) {
                 room_name = data.room_name;
                 $("#replies-name").html(data.replies_name);
@@ -102,7 +103,7 @@
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json',
-            url: 'api/messages/save',                      
+            url: '/messages/save',                      
             success: function(data) {
 
                 socket.emit('chat', {
